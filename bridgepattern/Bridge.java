@@ -1,3 +1,4 @@
+//Taken from Pankaj Kumars pdf on design patterns
 abstract class Shape {
 	protected Color color;
 
