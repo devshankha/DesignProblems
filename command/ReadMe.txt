@@ -1,0 +1,2 @@
+Nice implementation of command pattern to implement undo/redo functionality
+Code taken from https://medium.com/better-programming/utilizing-the-command-pattern-to-support-undo-redo-and-history-of-operations-b28fa9d58910
