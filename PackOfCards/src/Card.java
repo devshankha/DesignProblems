@@ -5,8 +5,8 @@ import java.util.Map;
 import javax.management.RuntimeErrorException;
 
 public class Card implements Comparable<Card> {	
-	Rank rank;
-	Suite suite;
+	private final Rank rank;
+	private final Suite suite;
 	private final static Map<String,Card>  CARD_CACHE = initCache();
 	public Card(Rank rank, Suite suite) {
 		super();
