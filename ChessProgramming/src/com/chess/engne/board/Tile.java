@@ -8,16 +8,17 @@ import com.chess.engine.pieces.Piece;
 public abstract class Tile {
 	protected final int tileCoordinates;
 	
-	private static final Map<Integer,EmptyTile> EMPTY_TILES = createAllPossibleEmptyTiles();
+	private static final Map<Integer,EmptyTile> EMPTY_TILES_CACHE = createAllPossibleEmptyTiles();
 	
 	private static Map<Integer,EmptyTile> createAllPossibleEmptyTiles() {
 		final Map<Integer,EmptyTile> emptyTiles = new HashMap();
 		for (int i=0; i < 64;i++)
-			EMPTY_TILES.put(i, new EmptyTile(i));
+			EMPTY_TILES_CACHE.put(i, new EmptyTile(i));
 		
 		//coud have used guava library
 		//return ImmutableMap.copyOf(EMPTY_TILES)
-		return EMPTY_TILES;
+		return Collections.unmodifiableMap(EMPTY_TILES_CACHE);
+		//return EMPTY_TILES_CACHE;
 	}
 	
 	public static Tile createTile(final int coordinates, final Piece piece) {
